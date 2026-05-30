@@ -24,7 +24,7 @@ body{
     font-size: 24px;
     font-weight: bold;
 }
-span{
+.logo span{
     color: red;
 }
 .nav-links{
@@ -41,20 +41,9 @@ span{
     text-decoration: none;
     font-size: 18px;
 }
+
 .nav-links a:hover{
     color: red;
-    text-decoration: underline;
-}
-.auth-links{
-    display: flex;
-    gap: 20px;
-}
-.auth-links a{
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-.auth-links a:hover{
     text-decoration: underline;
 }
 
@@ -145,16 +134,18 @@ span{
     font-size: 16px;
     color: #333;
 }
-.product add-to-cart{
+.product .add-to-cart{
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
     background-color: #333;
     color: white;
-    text-decoration: none;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
-.product add-to-cart:hover{
+
+.product .add-to-cart:hover{
     background-color: #555;
 }
 .product:hover{
@@ -278,40 +269,76 @@ span{
 }
 
 #contact{
-    padding: 50px 20px;
-    background-color: #f4f4f4;
+    padding: 80px 20px;
+    background: #f8f8f8;
 }
+
+#contact h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
 #contact p{
     text-align: center;
     margin-bottom: 40px;
+    color: #666;
 }
-#contact h2{
-    text-align: center;
-    margin-bottom: 40px;
-}
+
 #contact form{
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    max-width: 650px;
+    margin: auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-#contact input, #contact textarea{
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+#contact label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+#contact input,
+#contact textarea{
     width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s ease;
+    box-sizing: border-box;
 }
+
+#contact input:focus,
+#contact textarea:focus{
+    outline: none;
+    border-color: #7c0000;
+    box-shadow: 0 0 10px rgba(124,0,0,0.15);
+}
+
+#contact textarea{
+    resize: none;
+}
+
 #contact button{
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    width: 100%;
+    padding: 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    background: #7c0000;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
+
 #contact button:hover{
-    background-color: #555;
+    background: #5a0000;
+    transform: translateY(-2px);
 }
 
 .social-actions{
@@ -374,33 +401,38 @@ span{
     color: rgb(179, 34, 34);
 }
 
-/* ===== TABLET ===== */
 @media (max-width:768px){
 
     .navbar{
         flex-wrap: wrap;
     }
 
-    .nav-links,
-    .auth-links{
-        display: none;
-    }
-
     .menu-icon{
         display: flex;
     }
 
-    .nav-links.active{
-        display: block;
+    .nav-links{
+        display: none;
         width: 100%;
+        background: #333;
     }
 
-    .nav-links.active ul{
+    .nav-links.active{
+        display: block;
+    }
+
+    .nav-links ul{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-        padding: 15px 0;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .nav-links a{
+        display: block;
+        font-size: 18px;
+        padding: 10px;
     }
 
     #hero h1{
@@ -417,7 +449,6 @@ span{
     }
 }
 
-/* ===== MOBILE ===== */
 @media (max-width:480px){
 
     #hero{
@@ -458,7 +489,3 @@ span{
         font-size: 14px;
     }
 }
-
-
-
-
